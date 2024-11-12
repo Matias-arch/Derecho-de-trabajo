@@ -1,0 +1,262 @@
+/* Estilos para los textos de la página */
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: 'Lato', sans-serif; /* Fuente principal */
+    font-size: 16px; /* Tamaño base de la fuente */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #333; /* Color de texto principal */
+    background-color: #f9f9f9; /* Fondo suave para la página */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Títulos principales (h1) */
+  h1 {
+    font-family: 'Oswald', sans-serif; /* Fuente más estilizada para encabezados */
+    font-size: 2.5em; /* Tamaño grande para el título principal */
+    color: #0044cc; /* Color azul para resaltar */
+    text-align: center;
+    margin-bottom: 20px; /* Espacio debajo del título */
+  }
+  
+  /* Títulos secundarios (h2) */
+  h2 {
+    font-size: 2em;
+    background-color: #0044cc; /* Fondo azul para los títulos */
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  /* Títulos terciarios (h3) */
+  h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    border-bottom: 2px solid #0044cc; /* Línea abajo para los subtítulos */
+    padding-bottom: 5px;
+  }
+  
+  /* Párrafos (p) */
+  p {
+    font-size: 1.1em; /* Tamaño ligeramente más grande */
+    line-height: 1.8; /* Mejor legibilidad con mayor espaciado entre líneas */
+    color: #555; /* Color gris suave para los párrafos */
+    margin-bottom: 20px; /* Espacio debajo de cada párrafo */
+  }
+  
+  /* Listas (ul, ol) */
+  ul, ol {
+    margin-left: 20px; /* Alineación de las listas */
+    margin-bottom: 20px; /* Espacio debajo de las listas */
+  }
+  
+  /* Estilos de los elementos de lista (li) */
+  ul li, ol li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding-left: 20px;
+   
+  }
+  
+  
+  
+  /* Estilo para las citas (blockquote) */
+  blockquote {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #555;
+    border-left: 4px solid #0044cc; /* Línea azul en la izquierda */
+    padding-left: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para los enlaces (a) */
+  a {
+    color: #0044cc; /* Color azul para enlaces */
+    text-decoration: none; /* Eliminar el subrayado */
+    transition: color 0.3s ease; /* Transición suave en hover */
+  }
+  
+  a:hover {
+    color: #ffd700; /* Color dorado al pasar el mouse */
+    text-decoration: underline; /* Subrayado en hover */
+  }
+  
+  
+  
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+  }
+  .wrapper{
+    
+    position: fixed;
+    top: 0;
+    /*left: -100%;*/
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    /*background: linear-gradient(90deg, #f92c78, #4114a1);*/
+    /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+   /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
+    transition: all 0.6s ease-in-out;
+  }
+  #active:checked ~ .wrapper{
+    /*left: 0;*/
+    right:0;
+  }
+  .menu-btn{
+    position: absolute;
+    z-index: 2;
+    right: 20px;
+    /*left: 20px; */
+    top: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    /*color: #fff;*/
+    /*background: linear-gradient(90deg, #f92c78, #4114a1);*/
+    /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+   /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%); */
+    transition: all 0.3s ease-in-out;
+  }
+  .menu-btn span,
+  .menu-btn:before,
+  .menu-btn:after{
+      content: "";
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 40%;
+      width: 50%;
+      border-bottom: 4px solid #000000;
+      transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .menu-btn:before{
+    transform: translateY(-8px);
+  }
+  .menu-btn:after{
+    transform: translateY(8px);
+  }
+  
+  
+  .close {
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      transition: background .6s;
+  }
+  
+  /* closing animation */
+  #active:checked + .menu-btn span {
+      transform: scaleX(0);
+  }
+  #active:checked + .menu-btn:before {
+      transform: rotate(45deg);
+    border-color: #fff;
+  }
+  #active:checked + .menu-btn:after {
+      transform: rotate(-45deg);
+    border-color: #fff;
+  }
+  .wrapper ul{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+  }
+  .wrapper ul li{
+    height: 10%;
+    margin: 15px 0;
+  }
+  .wrapper ul li a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 5px 30px;
+    color: #fff;
+    border-radius: 50px;
+    position: absolute;
+    line-height: 50px;
+    margin: 5px 30px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .wrapper ul li a:after{
+    position: absolute;
+    content: "";
+    background: #ffffff;
+     /*background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);*/
+    /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50px;
+    transform: scaleY(0);
+    z-index: -1;
+    transition: transform 0.3s ease;
+  }
+  .wrapper ul li a:hover:after{
+    transform: scaleY(1);
+  }
+  .wrapper ul li a:hover{
+    color: #000000;
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
+  .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    text-align: center;
+    width: 100%;
+    color: #ff0000;
+    background-color: hwb(27 65% 5%);
+  }
+  .content .title{
+    font-size: 40px;
+    font-weight: 700;
+  }
+  .content p{
+    font-size: 35px;
+    font-weight: 600;
+  }
+  
+  #active:checked ~ .wrapper ul li a{
+    opacity: 1;
+  }
+  .wrapper ul li a{
+    transition: opacity 1.2s, transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateX(100px);
+  }
+  #active:checked ~ .wrapper ul li a{
+      transform: none;
+      transition-timing-function: ease, cubic-bezier(.1,1.3,.3,1); /* easeOutBackを緩めた感じ */
+     transition-delay: .6s;
+    transform: translateX(-100px);
+  }
+  
